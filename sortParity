@@ -1,0 +1,20 @@
+
+void swap(int *x,int *y)
+{
+    int temp=*y;
+    *y=*x;
+    *x=temp;
+}
+int* sortArrayByParity(int* nums, int numsSize,int *returnSize){
+int j=0,i;
+for(i=0;i<numsSize;i++)
+{
+    if(nums[i]%2==0)
+    {
+    swap(&nums[j],&nums[i]);
+    j++;
+    }
+}
+*returnSize=numsSize;
+return nums;
+}
